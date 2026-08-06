@@ -4,12 +4,12 @@ import '../../models/patient_case_model.dart';
 
 class TriageEngine {
   static String calculateSeverity(Vitals vitals) {
-    // 1. أسود (ميئوس منها / متوفى): النبض والتنفس صفر
+     
     if (vitals.heartRate == 0 && vitals.respRate == 0) {
       return 'BLACK';
     }
 
-    // 2. أحمر (خطر فوري على الحياة): علامات متدهورة بشدة
+    
     if (vitals.heartRate >= 130 ||
         vitals.heartRate <= 40 ||
         vitals.respRate >= 30 ||
@@ -19,7 +19,7 @@ class TriageEngine {
       return 'RED';
     }
 
-    // 3. برتقالي (خطير جداً): علامات سيئة جداً لكن ليست انهياراً تاماً
+    
     if (vitals.heartRate >= 120 ||
         vitals.heartRate < 50 ||
         vitals.respRate >= 26 ||
@@ -28,7 +28,7 @@ class TriageEngine {
       return 'ORANGE';
     }
 
-    // 4. أصفر (عاجل): علامات غير طبيعية وتستدعي الاهتمام
+    
     if (vitals.heartRate >= 100 ||
         vitals.respRate >= 22 ||
         vitals.systolicBP >= 140 ||
@@ -37,7 +37,7 @@ class TriageEngine {
       return 'YELLOW';
     }
 
-    // 5. أخضر (غير عاجل): مستقر وطبيعي
+    
     return 'GREEN';
   }
 

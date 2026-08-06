@@ -7,9 +7,8 @@ import '../utils/triage_engine.dart';
 
 class PatientCard extends StatelessWidget {
   final PatientCase patientCase;
-  final Widget? actionButton; // زر اختياري يتغير حسب الشاشة (طبيب أو ممرض)
-  final VoidCallback? onTap; // حدث عند الضغط على البطاقة كاملة
-
+  final Widget? actionButton;  
+  final VoidCallback? onTap; 
   const PatientCard({
     Key? key,
     required this.patientCase,
@@ -19,28 +18,28 @@ class PatientCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // جلب اللون والاسم العربي للتصنيف
+    
     final severityColor = AppColors.getColorForSeverity(patientCase.colorCode);
     final severityName = TriageEngine.getSeverityNameArabic(patientCase.colorCode);
 
     return Card(
       elevation: 2,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      clipBehavior: Clip.antiAlias, // لضمان عدم خروج الألوان عن حواف البطاقة
+      clipBehavior: Clip.antiAlias, 
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         onTap: onTap,
-        child: IntrinsicHeight( // لجعل الشريط الجانبي يأخذ نفس ارتفاع البطاقة
+        child: IntrinsicHeight( 
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // 1. الشريط اللوني الجانبي (يعبر عن خطورة الحالة)
+              
               Container(
                 width: 12,
                 color: severityColor,
               ),
               
-              // 2. محتوى البطاقة
+              //  محتوى البطاقة
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
@@ -71,7 +70,7 @@ class PatientCard extends StatelessWidget {
                         ),
                       ),
                       
-                      // 3. زر الإجراء (إن وُجد)
+                       
                       if (actionButton != null) actionButton!,
                     ],
                   ),

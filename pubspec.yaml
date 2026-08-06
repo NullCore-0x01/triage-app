@@ -1,0 +1,51 @@
+name: triage_app
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.1.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.0.0
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^6.0.0
+  flutter_native_splash: ^2.4.0
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: "./lib/core/icon.png" # مسار أيقونتك النظيفة
+  
+  # هذا السطر يمنع الشاشة من التمدد بشكل كامل ويحافظ على أبعاد الأيقونة
+  fullscreen: false 
+
+  # إجبار أندرويد 12+ على نفس الإعدادات ومنع النظام من تطبيق الثيم الداكن
+  android_12:
+    image: "./lib/core/icon.png"
+    color: "#ffffff"
+
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "./lib/core/icon.png"
+  image_path: "./lib/core/icon.png"
+
+flutter:
+  uses-material-design: true
+
+

@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // ألوان الفرز الخمسة
-  static const Color triageRed = Color(0xFFE53935); // أحمر
-  static const Color triageOrange = Color(0xFFF57C00); // برتقالي (جديد)
-  static const Color triageYellow = Color(0xFFFFB300); // أصفر
-  static const Color triageGreen = Color(0xFF43A047); // أخضر
-  static const Color triageBlack = Color(0xFF212121); // أسود
+  static const Color triageRed = Color(0xFFE53935); 
+  static const Color triageOrange = Color(0xFFF57C00);
+  static const Color triageYellow = Color(0xFFFFB300); 
+  static const Color triageGreen = Color(0xFF43A047); 
+  static const Color triageBlack = Color(0xFF212121); 
 
   static const Color primary = Color(0xFF1976D2);
   static const Color background = Color(0xFFF5F7FA);
@@ -21,13 +21,13 @@ class AppColors {
       case 'RED':
         return triageRed;
       case 'ORANGE':
-        return triageOrange; // 🟢 إضافة البرتقالي
+        return triageOrange;
       case 'YELLOW':
         return triageYellow;
       case 'GREEN':
         return triageGreen;
       case 'BLACK':
-        return triageBlack; // 🟢 إضافة الأسود
+        return triageBlack;
       default:
         return Colors.grey;
     }
